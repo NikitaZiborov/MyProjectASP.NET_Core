@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "/Views/Menu.cshtml";
+}
+<link rel="stylesheet" href="~/css/fields.css" media="screen" type="text/css" />
+
+<div id="login-form">
+    <h1>SEARCH PLAYER</h1>
+    <fieldset>
+        <form action="/Stadiums/SearchResult">
+            <input type="text" name="places" required placeholder="Number of places" pattern="^[0-9]+$">
+            <input type="submit" value="SEARCH">
+        </form>
+    </fieldset>
+</div> 

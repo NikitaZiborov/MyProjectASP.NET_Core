@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "/Views/Menu.cshtml";
+}
+<link rel="stylesheet" href="~/css/fields.css" media="screen" type="text/css" />
+
+<div id="login-form">
+    <h1>SEARCH PLAYER</h1>
+    <fieldset>
+        <form action="/Players/SearchResult">
+            <input type="text" name="name" required placeholder="Set name" pattern="^[a-zA-Z]+$">
+            <input type="text" name="surname" required placeholder="Set surname" pattern="^[a-zA-Z]+$">
+            <input type="submit" value="SEARCH">
+        </form>
+    </fieldset>
+</div> 

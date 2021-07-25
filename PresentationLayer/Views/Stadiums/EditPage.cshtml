@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "/Views/Menu.cshtml";
+}
+<link rel="stylesheet" href="~/css/fields.css" media="screen" type="text/css" />
+
+<div id="login-form">
+    <h1>EDIT STADIUM</h1>
+    <fieldset>
+        <form action="/Stadiums/SaveChanges">
+            <input type="text" name="places" required placeholder="Number of places" value="@ViewData["StadiumPlaces"]" pattern="^[0-9]+$">
+            <input type="text" name="costs" required placeholder="Price per place" value="@ViewData["StadiumCost"]" pattern="^[0-9]+$">
+            <input type="submit" value="SAVE">
+        </form>
+    </fieldset>
+</div> 

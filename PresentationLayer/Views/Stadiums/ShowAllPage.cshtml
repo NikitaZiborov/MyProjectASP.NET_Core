@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "/Views/Menu.cshtml";
+}
+@using CourseWork.Models
+@model IEnumerable<StadiumModel>
+<link rel="stylesheet" href="~/css/table.css" />
+
+<table class="table_dark">
+    <tr>
+        <th>Places</th>
+        <th>Costs</th>
+        <th>Edition</th>
+        <th>Deletion</th>
+    </tr>
+    @foreach (StadiumModel stadium in Model)
+    {
+        <tr>
+            <td>@stadium.Places</td>
+            <td>@stadium.Cost</td>
+            <td>
+                <form action="/Stadiums/EditPage/@stadium.Id">
+                    <input type="submit" value="Edit">
+                </form>
+            </td>
+            <td>
+                <form action="/Stadiums/Delete/@stadium.Id">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+    }
+</table>

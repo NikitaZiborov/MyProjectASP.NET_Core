@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "/Views/Menu.cshtml";
+}
+@using CourseWork.Models
+@model IEnumerable<PlayerModel>
+<link rel="stylesheet" href="~/css/table.css" />
+
+<table class="table_dark">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Birth</th>
+        <th>Health</th>
+        <th>In game</th>
+        <th>Salary</th>
+        <th>Edition</th>
+        <th>Deletion</th>
+    </tr>
+    @foreach (PlayerModel player in Model)
+    {
+        <tr>
+            <td>@player.Name</td>
+            <td>@player.Surname</td>
+            <td>@player.Date</td>
+            <td>@player.IsHealthy</td>
+            <td>@player.IsInGame</td>
+            <td>@player.Salary</td>
+            <td>
+                <form action="/Players/EditPage/@player.Id">
+                    <input type="submit" value="Edit">
+                </form>
+            </td>
+            <td>
+                <form action="/Players/Delete/@player.Id">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+    }
+</table>

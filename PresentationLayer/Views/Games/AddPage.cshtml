@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "/Views/Menu.cshtml";
+}
+@using CourseWork.Models
+@using CourseWork.ViewModels
+@model GameViewModel
+<link rel="stylesheet" href="~/css/fields.css" media="screen" type="text/css" />
+
+<div id="login-form">
+    <h1>NEW GAME</h1>
+    <fieldset>
+        <form action="/Games/AddGame">
+            <input type="text" name="date" required placeholder="Date" pattern="^[a-zA-Z]+$">
+            <input type="text" name="spectators" required placeholder="Number of spectators" pattern="^[0-9]+$">
+            <select name="place">
+                @foreach (StadiumModel stadium in Model.Stadiums)
+                {
+                    <option value="@stadium.Id">@stadium.Places</option>
+                }
+            </select>
+            <select multiple name="players">
+                @foreach (PlayerModel player in Model.Players)
+                {
+                    if (player.IsInGame == false)
+                    {
+                        <option value="@player.Id">@player.Name @player.Surname</option>
+                    }
+                }
+            </select>
+            <select name="result">
+                <option value="Won">Won</option>
+                <option value="Failed">Failed</option>
+                <option value="Noone">Draw</option>
+                <option value="NotPlayed">Not played yet</option>
+            </select>
+            <input type="submit" value="ADD">
+        </form>
+    </fieldset>
+</div> 

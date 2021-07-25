@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "/Views/Menu.cshtml";
+}
+<link rel="stylesheet" href="~/css/fields.css" media="screen" type="text/css" />
+
+<div id="login-form">
+    <h1>NEW STADIUM</h1>
+    <fieldset>
+        <form action="/Stadiums/AddStadium">
+            <input type="text" name="places" required placeholder="Number of places" pattern="^[0-9]+$">
+            <input type="text" name="costs" required placeholder="Price per place" pattern="^[0-9]+$">
+            <input type="submit" value="ADD">
+        </form>
+    </fieldset>
+</div> 
